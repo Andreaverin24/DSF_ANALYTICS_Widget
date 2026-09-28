@@ -1,0 +1,13 @@
+<resources>
+    <string name="update_available">Доступна новая версия %1$s</string>
+    <string name="download_update">Скачать обновление</string>
+    <string name="browser_unavailable">Не найден браузер для скачивания</string>
+    <string name="average_apy_30d">Средняя APY · 30 дней</string>
+    <string name="current_apy">Текущая APY</string>
+    <string name="metric_tvl" translatable="false">TVL</string>
+    <string name="metric_apy" translatable="false">APY</string>
+    <string name="widget_description">TVL и APY DSF с графиком за 30 дней</string>
+    <string name="add_widget">Добавить виджет</string>
+    <string name="open_dsf_site">Открыть DSF.Finance</string>
+    <string name="add_widget_manually">Удерживайте свободное место на главном экране → Виджеты → DSF Analytics.</string>
+</resources>

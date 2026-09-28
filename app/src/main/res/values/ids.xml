@@ -1,0 +1,8 @@
+<resources>
+    <item name="update_panel" type="id" />
+    <item name="download_update" type="id" />
+    <item name="app_version" type="id" />
+    <item name="stats_average_apy" type="id" />
+    <item name="stats_current_apy" type="id" />
+    <item name="stats_tvl" type="id" />
+</resources>

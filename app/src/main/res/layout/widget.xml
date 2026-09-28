@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/widget_image" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="fitXY" android:importantForAccessibility="no" android:src="@drawable/ic_dsf" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="9dp"
+        android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false"
+        android:layoutDirection="ltr" android:importantForAccessibility="noHideDescendants">
+        <ImageView android:id="@+id/tvl_label" style="@style/CounterLabel" />
+        <LinearLayout android:id="@+id/tvl_digits" android:layout_width="wrap_content" android:layout_height="32dp"
+            android:orientation="horizontal" />
+        <TextView android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+        <ImageView android:id="@+id/apy_label" style="@style/CounterLabel" android:layout_marginStart="20dp" />
+        <LinearLayout android:id="@+id/apy_digits" android:layout_width="wrap_content" android:layout_height="32dp"
+            android:orientation="horizontal" />
+    </LinearLayout>
+</FrameLayout>

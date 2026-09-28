@@ -1,0 +1,51 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace = 'finance.dsf.widget'
+    compileSdk = 36
+    defaultConfig {
+        applicationId = 'finance.dsf.widget'
+        minSdk = 26
+        targetSdk = 36
+        versionCode = 12
+        versionName = '0.3.9'
+        testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    buildFeatures { buildConfig = true }
+    signingConfigs {
+        release {
+            def signingFile = System.getenv('DSF_ANDROID_STORE_FILE')
+            if (signingFile) storeFile = file(signingFile)
+            storePassword = System.getenv('DSF_ANDROID_STORE_PASSWORD')
+            keyAlias = 'dsf-finance'
+            keyPassword = System.getenv('DSF_ANDROID_STORE_PASSWORD')
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled = false
+            debuggable = false
+            signingConfig = signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+// Public builds must fail closed instead of silently producing an unsigned/debug APK.
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.project == project && it.name.toLowerCase().contains('release') }) {
+        if (!System.getenv('DSF_ANDROID_STORE_FILE') || !System.getenv('DSF_ANDROID_STORE_PASSWORD')) {
+            throw new GradleException('Release signing is required. Use scripts/Build-Release.ps1.')
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.16.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+}

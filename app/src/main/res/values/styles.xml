@@ -1,0 +1,19 @@
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:colorAccent">#3956FE</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#F4F6FC</item>
+        <item name="android:navigationBarColor">#F4F6FC</item>
+    </style>
+    <style name="CounterGlyph">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+    <style name="CounterLabel" parent="CounterGlyph">
+        <item name="android:layout_marginEnd">6dp</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/counter_flipper" android:layout_width="wrap_content" android:layout_height="32dp"
+    android:autoStart="false" android:animateFirstView="true"
+    android:inAnimation="@anim/counter_in_up" android:outAnimation="@anim/counter_out_up">
+    <ImageView android:id="@+id/counter_before" style="@style/CounterGlyph" />
+    <ImageView android:id="@+id/counter_after" style="@style/CounterGlyph" />
+</ViewFlipper>
